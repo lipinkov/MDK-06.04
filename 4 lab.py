@@ -1,18 +1,11 @@
 import datetime
 
-
 def parse_time(time_str):
-    try:
-        hours, minutes = map(int, time_str.strip().split(':'))
-        return datetime.time(hour=hours, minute=minutes)
-    except Exception:
-        print("Ошибка: введите время в формате ЧЧ:ММ, например, 08:00")
-        exit(1)
-
+    hours, minutes = map(int, time_str.strip().split(':'))
+    return datetime.time(hour=hours, minute=minutes)
 
 def minutes_difference(t1, t2):
     return (t1.hour * 60 + t1.minute) - (t2.hour * 60 + t2.minute)
-
 
 def check_rules(current_time, scheduled_time, method):
     reminders = []
@@ -28,18 +21,14 @@ def check_rules(current_time, scheduled_time, method):
             reminders.append("Сейчас время для приема лекарства.")
     diff_after = minutes_difference(current_time, scheduled_time)
     if diff_after > 30:
-        reminders.append(
-            "Вы пропустили прием лекарства. Пожалуйста, примите его как можно скорее или свяжитесь с врачом.")
+        reminders.append("Вы пропустили прием лекарства. Пожалуйста, примите его как можно скорее или свяжитесь с врачом.")
     return reminders
-
 
 def main():
     print("Система напоминаний о приеме лекарств (экспертная система на основе продукционных правил)")
-    scheduled_time_str = input(
-        "Введите запланированное время приема лекарства (в формате ЧЧ:ММ, например, 08:00): ")
+    scheduled_time_str = input("Введите запланированное время приема лекарства (в формате ЧЧ:ММ, например, 08:00): ")
     scheduled_time = parse_time(scheduled_time_str)
-    method = input(
-        "Введите способ приема лекарства ('до еды', 'после еды', 'независимо от еды'): ").strip()
+    method = input("Введите способ приема лекарства ('до еды', 'после еды', 'независимо от еды'): ").strip()
     current_time = datetime.datetime.now().time()
     print("Текущее системное время:", current_time.strftime("%H:%M"))
     reminders = check_rules(current_time, scheduled_time, method)
@@ -49,7 +38,6 @@ def main():
             print(" -", msg)
     else:
         print("\nНа данный момент напоминаний нет.")
-
 
 if __name__ == "__main__":
     main()
