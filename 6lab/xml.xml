@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<yml_catalog date="2025-01-21T10:00:00+01:00"> 
+
+    <shop> 
+
+        <name>Умный дом Иванова</name> 
+
+        <company>SmartHome Co.</company> 
+
+        <url>https://www.smarthome.example</url> 
+
+        <currencies> 
+
+            <currency id="RUR" rate="1"/> 
+
+        </currencies> 
+
+        <categories> 
+
+            <category id="1">Умные устройства</category> 
+
+            <category id="2" parentId="1">Освещение</category> 
+
+            <category id="3" parentId="1">Климат-контроль</category> 
+
+            <category id="4" parentId="1">Безопасность</category> 
+
+        </categories> 
+
+        <offers> 
+
+            <offer id="1" available="true"> 
+
+                <name>Умная лампочка</name> 
+
+                <categoryId>2</categoryId> 
+
+                <price>1200</price> 
+
+                <currencyId>RUR</currencyId> 
+
+                <vendor>SmartHome</vendor> 
+
+                <param name="Состояние">Включено</param> 
+
+                <param name="Яркость">80%</param> 
+
+                <param name="Комната">Гостиная</param> 
+
+            </offer> 
+
+            <offer id="2" available="true"> 
+
+                <name>Термостат</name> 
+
+                <categoryId>3</categoryId> 
+
+                <price>8500</price> 
+
+                <currencyId>RUR</currencyId> 
+
+                <vendor>SmartHome</vendor> 
+
+                <param name="Состояние">Включено</param> 
+
+                <param name="Температура">22°C</param> 
+
+                <param name="Комната">Гостиная</param> 
+
+            </offer> 
+
+            <offer id="3" available="true"> 
+
+                <name>Умная камера</name> 
+
+                <categoryId>4</categoryId> 
+
+                <price>15000</price> 
+
+                <currencyId>RUR</currencyId> 
+
+                <vendor>SmartHome</vendor> 
+
+                <param name="Состояние">Включено</param> 
+
+                <param name="Комната">Вход</param> 
+
+            </offer> 
+
+        </offers> 
+
+    </shop> 
+
+</yml_catalog> 
